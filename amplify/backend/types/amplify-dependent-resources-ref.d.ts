@@ -31,5 +31,11 @@ export type AmplifyDependentResourcesAttributes = {
             "WebsiteURL": "string",
             "S3BucketSecureURL": "string"
         }
+    },
+    "storage": {
+        "tipngov2profile": {
+            "BucketName": "string",
+            "Region": "string"
+        }
     }
 }

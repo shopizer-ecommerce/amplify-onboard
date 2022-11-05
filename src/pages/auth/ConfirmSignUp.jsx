@@ -48,7 +48,7 @@ export default function ConfirmSignUp() {
           handler={setCode}
         />
       </div>
-      <div className="mb-4 flex justify-end text-indigo-500 hover:text-amber-500 duration-200 transition ease-in-out">
+      <div className="mb-4 flex text-indigo-500 hover:text-amber-500 duration-200 transition ease-in-out">
         <button type="button" onClick={() => resendConfirmationCode(email)}>
           {LANGUAGES[state.lang].Auth.ResendConfirmationCode}
         </button>

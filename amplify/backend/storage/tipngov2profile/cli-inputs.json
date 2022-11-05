@@ -1,0 +1,14 @@
+{
+  "resourceName": "tipngov2profile",
+  "policyUUID": "4699c767",
+  "bucketName": "tipngov2profile",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

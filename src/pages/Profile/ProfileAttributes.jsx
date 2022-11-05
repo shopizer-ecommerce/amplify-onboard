@@ -26,6 +26,8 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
 
   /** Fill the form */
   useEffect(() => {
+    setProvince("qc");
+    setCountry("CA");
     if (user) {
       console.log("User from DB " + JSON.stringify(user));
       setName(user?.name || "");
@@ -51,10 +53,6 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
     loading();
     try {
       console.log('Before updating ' + JSON.stringify(user));
-      const birthdateFormated =
-        user.locale === "pt-BR"
-          ? moment(birthdate, "DD/MM/YYYY").format("YYYY-MM-DD")
-          : moment(birthdate, "YYYY-MM-DD").format("YYYY-MM-DD");
       await Mudations.UpdateUser({
         id: user.id,
         email: user.email,
@@ -132,12 +130,20 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
             </option>
           ))}
         </Select>
+        <Input
+          type="text"
+          placeholder={LANGUAGES[user.locale].Profile.PostalCode}
+          value={postalCode}
+          handler={setPostalCode}
+          error={!postalCode}
+        />
         <Phone
           placeholder={LANGUAGES[user.locale].Profile.Phone}
           value={phone}
           handler={setPhone}
           error={!phone}
         />
+
         <Button
           text={LANGUAGES[user.locale].Profile.ChangeAttributes}
           disabled={disabledAttributes()}

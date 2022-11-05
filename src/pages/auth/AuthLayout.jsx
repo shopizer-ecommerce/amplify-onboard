@@ -29,7 +29,7 @@ export default function AuthLayout() {
       const { attributes } = await Auth.SignIn(email, pwd, remember);
       dispatch({ type: TYPES.UPDATE_LANG, payload: attributes.locale });
       stopLoading();
-      navigate(ROUTES[attributes.locale].HOME);
+      navigate(ROUTES[attributes.locale].PROFILE);
     } catch (err) {
       stopLoading();
       setAlert({
@@ -160,7 +160,7 @@ export default function AuthLayout() {
       try {
         await Auth.GetUser();
         setLoading(false);
-        navigate(ROUTES[state.lang].HOME);
+        navigate(ROUTES[state.lang].PROFILE);
       } catch (error) {
         setLoading(false);
       }

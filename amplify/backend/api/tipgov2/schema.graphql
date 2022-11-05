@@ -14,7 +14,7 @@ type User @model @auth(rules: [{ allow: owner, operations: [create, read, update
   postalCode: String
   province: String
   country: String
-  phone: AWSPhone
+  phone: String
   agreement: Boolean
   image: String
   _version: String
