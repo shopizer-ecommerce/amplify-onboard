@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "custom"
+  ],
+  "parentResource": "tipgov2",
+  "functionName": "tipgov2CustomMessage",
+  "resourceName": "tipgov2CustomMessage",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/Users/carlsamson/.nvm/versions/node/v16.13.0/lib/node_modules/@aws-amplify/cli/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/CustomMessage",
+  "triggerTemplate": "CustomMessage.json.ejs",
+  "triggerEventPath": "CustomMessage.event.json",
+  "roleName": "tipgov2CustomMessage",
+  "skipEdit": true,
+  "enableCors": false
+}

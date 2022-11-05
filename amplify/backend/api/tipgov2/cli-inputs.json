@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "tipgov2",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/carlsamson/Documents/dev/workspace/tip/tipgo-v1/amplify-login/amplify/backend/api/tipgov2/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authtipgov2"
+    }
+  }
+}
