@@ -78,6 +78,8 @@ const en_us_lang = {
     Agreement: 'Agreement',
     Phone: 'Phone',
     Picture: 'Picture',
+    UploadImage: 'Upload profile image',
+    ImageText: 'Your Tip N Go Profile image to be displayed in the payment page. Please make sure that the image is clear and ideally on a white background',
     Birthdate: 'Birth Date',
     ChangeAttributes: 'Update profile',
     AttributesSuccess: 'Profile Updated successfully!',

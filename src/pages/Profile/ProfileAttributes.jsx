@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import { AppContext } from "../../context";
 import { LANGUAGES, PROVINCES, COUNTRY } from "../../constants";
 import Mudations from "../../api/mutations";
-import { Button, Form, Input, Select, Phone } from "../../components";
+import { Button, Form, Input, Select, Phone, Picture } from "../../components";
 import { FormatDate } from "../../helpers";
 import moment from "moment";
 
@@ -88,6 +88,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   return (
     <Form>
       <div className="mb-4 w-full flex flex-col gap-4 justify-center">
+        <Picture/>
         <Input
           type="text"
           placeholder={LANGUAGES[user.locale].Profile.FirstName}

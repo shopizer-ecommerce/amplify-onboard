@@ -12,3 +12,4 @@ export { default as RememberMe } from "./RememberMe";
 export { default as Select } from "./Select";
 export { default as Title } from "./Title";
 export { default as Phone } from "./Phone";
+export { default as Picture } from "./Picture";

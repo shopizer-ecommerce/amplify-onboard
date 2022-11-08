@@ -13,7 +13,7 @@ const fr_ca_lang = {
   Languages: {
     "fr-CA": "Francais",
     "en-US": "Anglais",
-    "pt-BR": "Portuguais",
+    "es-ES": "Espagnol",
   },
   NotFound: {
     Sorry: "Désolé",
@@ -23,17 +23,17 @@ const fr_ca_lang = {
     CompleteProfile: "Veuillez compléter votre profile"
   },
   CommonError: {
-    Login: "Un problème est survenu lors de l'authentification",
+    Login: "Un problème est survenu lors de l'authentification, vérifiez votre nom d'usager et mot de passe",
     SendCode: "Le code d'accès n'a pu être envoyé, veuillez vérifier votre courriel",
     RedefinePassword:
-      "Unable to redefine password, email, code or new password are wrong!",
-    SignUp: "Unable to Register. Email already exists or Password are wrong!",
-    ConfirmSignUp: "Unable to confirm registration, email or code are wrong!",
-    CodeError: "Invalid verification code provided, please try again.",
-    Email: "An account with the given email already exists.",
-    Password: "Incorrect Password.",
-    NewPassword: "Password did not conform with policy.",
-    AttemptLimit: "Attempt limit exceeded, please try after some time.",
+      "Erreur lors duchangement de mot de passe, le mot de passe, le courriel et le code fourni sont incorrect",
+    SignUp: "L'enregistrement n'est pas possible, Le courriel existe déjà ou le mot de passe est incorrect",
+    ConfirmSignUp: "La vérification a échouée, le courriel ou le code saisi est invalide",
+    CodeError: "Le code de vérification soumis est invalide",
+    Email: "Un compte existe déjà pour ce courriel",
+    Password: "Mot de passe invalide",
+    NewPassword: "Le mot de passe saisi n'est pas conforme",
+    AttemptLimit: "Le nombre d'essai a éxédé la limite permise, veuillex ré-essayer plus tard",
   },
   Auth: {
     SignInTitle: "Authentification",
@@ -48,7 +48,7 @@ const fr_ca_lang = {
     RedefinePasswordTitle: "Changer votre mot de passe",
     RepeatPassword: "Répétez votre mot de passe",
     RedefinePasswordSuccess: "Password changed successfully!",
-    RedefinePasswordButton: "Redefine Password",
+    RedefinePasswordButton: "Changer le mot de passe",
     SignUpTitle: "Crééer un compte",
     SignUpSuccess: "Vérifiez votre courriel",
     SignUpButton: "Créer",
@@ -68,9 +68,9 @@ const fr_ca_lang = {
     ChangePassword: "Changer le mot de passe",
     Language: "Language",
     ChangeLanguage: "Changer la langue",
-    CodeAlert: "Please, check your email and send the code.",
+    CodeAlert: "Vérifiez votre courriel, un code vous a été envoyé",
     EmailSuccess: "Le courriel a été changé avec succès !",
-    PasswordSuccess: "Password changed successfully!",
+    PasswordSuccess: "Le mot de passe a été changé avec succès",
     Name: 'Nom',
     FirstName: 'Prénom',
     LastName: 'Nom',
@@ -82,61 +82,16 @@ const fr_ca_lang = {
     Agreement: 'Termes et conditions',
     Phone: 'Téléphone',
     Picture: 'Photo',
-    Birthdate: 'Birth Date',
+    UploadImage: 'Ajouter une photo de profile',
+    ImageText: "Votre photo profile Tip N Go sera affichée sur le formulaire de paiement. Veuillez vous assurer d'une bonne qualité d'image idéalement prise sur un fond pâle.",
     ChangeAttributes: 'Mettre à jour le profile',
-    AttributesSuccess: 'Profile Updated successfully!',
+    AttributesSuccess: 'Le profile a été mis à jour avec succès!',
     Provinces: {
       "qc": "Québec",
       "on": "Ontario"
     },
     Country: {
       "CA": "Canada"
-    },
-  },
-  KYC: {
-    Welcome: {
-      Button: "Welcome",
-      Title: "Welcome to Video KYC",
-      SubTitle: "The Video KYC (Know your Customer) process consists of 3 simple steps:",
-      DescriptionOne: "Liveliness Detection - The user will do a series of random face gestures to determine whether its a live feed.",
-      DescriptionTwo: "Documents Validation - upload valid ID documents to use for verification.</li>",
-      DescriptionThree: "Summary - The final result of the validation.",
-      Start: "Start"
-    },
-    Liveliness: {
-      Button: "Liveliness",
-      Title: "Welcome to Video KYC",
-      SubTitle: "You will be asked to make a series of random gestures that will allow us to detect if it is a live stream.",
-      ThankYou: "Thank You",
-      FailedValidate: "Failed to validate. Try again!",
-      NoFace: "Could not recognize a face. Try again.",
-      MoreThanOneFace:  "More than one face. Try again.",
-      Unkown: "Unkown gesture type specified",
-      Validate: "Validate",
-      Continue: "Continue",
-    },
-    Documents: {
-      Button: "Documents",
-      Title: "Document Validation",
-      SubTitle: "Use Camera or Upload?",
-      Camera: "Camera",
-      Upload: "Upload",
-      ShowDocument: "Show a photo ID.",
-      UploadDocument: "Submit a photo ID.",
-      FileName: "Select",
-      DocTypePassport: "Passport",
-      DocTypeDriver: "Driver's license",
-      NoFace: "Could not recognize a face. Try again.",
-      NoText: "Could not recognize text. Try again.",
-      NoEntities: "Unable to recognize entities. Try again.",
-      Validate: "Validate",
-      Continue: "Continue",
-      Success: "Document processed successfully!",
-      Fail: "Unable to validate Name and/or Date of Birth, please try again",
-    },
-    Summary: {
-      Button: "Summary",
-      Title: "Summary",
     }
   }
 };
