@@ -1,4 +1,5 @@
 const en_us_lang = {
+  Close: "Close",
   Loading: "Loading",
   Email: "Email",
   Password: "Password",
@@ -70,6 +71,8 @@ const en_us_lang = {
     Name: 'Name',
     FirstName: 'First Name',
     LastName: 'Last Name',
+    Agree: "I agree to the",
+    TermsConditions: "terms and conditions",
     Address: 'Address',
     City: 'City',
     Province: 'Province',
@@ -87,7 +90,7 @@ const en_us_lang = {
       "qc": "Qubec",
       "on": "Ontario"
     },
-    Country: {
+    CountryList: {
       "CA": "Canada"
     },
 

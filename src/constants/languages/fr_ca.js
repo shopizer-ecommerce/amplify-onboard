@@ -1,4 +1,5 @@
 const fr_ca_lang = {
+  Close: "Fermer",
   Loading: "Chargement",
   Email: "Courriel",
   Password: "Mot de passe",
@@ -74,6 +75,8 @@ const fr_ca_lang = {
     Name: 'Nom',
     FirstName: 'Prénom',
     LastName: 'Nom',
+    Agree: "J'accepte",
+    TermsConditions: "les termes et conditions",
     Address: 'Addresse',
     City: 'Ville',
     Province: 'Province',
@@ -90,7 +93,7 @@ const fr_ca_lang = {
       "qc": "Québec",
       "on": "Ontario"
     },
-    Country: {
+    CountryList: {
       "CA": "Canada"
     }
   }

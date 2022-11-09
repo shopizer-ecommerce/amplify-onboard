@@ -3,16 +3,13 @@ import { useOutletContext } from "react-router-dom";
 import { AppContext } from "../../context";
 import { LANGUAGES, PROVINCES, COUNTRY } from "../../constants";
 import Mudations from "../../api/mutations";
-import { Button, Form, Input, Select, Phone, Picture } from "../../components";
-import { FormatDate } from "../../helpers";
-import moment from "moment";
+import { Button, Form, Input, Select, Phone, Picture, Agreement } from "../../components";
 
 
 const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const { state } = useContext(AppContext);
   const { user } = state;
   const { loadUser, setLoading } = useOutletContext();
-  const [name, setName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
@@ -21,7 +18,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const [province, setProvince] = useState("");
   const [country, setCountry] = useState("");
   const [phone, setPhone] = useState("");
-  const [birthdate, setBithdate] = useState("");
+  const [agreement, setAgreement] = useState("");
 
 
   /** Fill the form */
@@ -29,8 +26,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
     setProvince("qc");
     setCountry("CA");
     if (user) {
-      console.log("User from DB " + JSON.stringify(user));
-      setName(user?.name || "");
+      //console.log("User from DB " + JSON.stringify(user));
       setFirstName(user?.firstName || "");
       setLastName(user?.lastName || "");
       setAddress(user?.address || "");
@@ -39,7 +35,8 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
       setProvince(user?.province || "");
       setPhone(user?.phone || "");
       setCountry(user?.country || "");
-      setBithdate(user?.birthdate ? FormatDate.Show(user?.birthdate, user.locale) : "");
+      setAgreement(user?.agreement || false);
+      //setBithdate(user?.birthdate ? FormatDate.Show(user?.birthdate, user.locale) : "");
     }
   }, [user]);
   
@@ -64,7 +61,8 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
         postalCode: postalCode,
         province: province,
         country: country,
-        phone: phone
+        phone: phone,
+        agreement: agreement
         //name: user.firstName + ' ' + user.lastName,
         //birthdate: '1900-01-01',
       });
@@ -81,9 +79,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
     setLoading(false);
   };
 
-  const handleFormatDate = (date) => setBithdate(FormatDate.Format(date, user.locale));
-
-  const disabledAttributes = () => !firstName || !lastName;
+  const disabledAttributes = () => !firstName || !lastName || !agreement;
 
   return (
     <Form>
@@ -127,7 +123,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
         <Select value={country} handler={setCountry}>
           {Object.keys(COUNTRY).map((l) => (
             <option key={l} value={l}>
-              {LANGUAGES[user.locale].Profile.Country[l]}
+              {LANGUAGES[user.locale].Profile.CountryList[l]}
             </option>
           ))}
         </Select>
@@ -143,6 +139,13 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
           value={phone}
           handler={setPhone}
           error={!phone}
+        />
+
+        <Agreement
+           placeholder={LANGUAGES[user.locale].Profile.Agreement}
+           value={agreement}
+           handler={setAgreement}
+           error={!agreement}
         />
 
         <Button

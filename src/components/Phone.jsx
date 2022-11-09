@@ -4,7 +4,6 @@ import { AppContext } from "../context";
 
 const Phone = ({ placeholder, value, handler }) => {
   const { state } = useContext(AppContext);
-  //const { state } = useContext(AppContext);
 
 
   return (
