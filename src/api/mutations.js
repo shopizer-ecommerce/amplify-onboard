@@ -10,9 +10,7 @@ const CreateUser = async (email, locale) => {
   return createUser;
 };
 
-const UpdateUser = async ({ id, email, locale, firstName, lastName, address, city, province, country, postalCode, phone, image }) => {
-  //const newTodo = await API.graphql({ query: mutations.updateUser, variables: {input: inputData}, authMode: "AMAZON_COGNITO_USER_POOLS" });
-  //console.log('Mutation ' + updateUser);
+const UpdateUser = async ({ id, email, locale, firstName, lastName, address, city, province, country, postalCode, phone, image, agreement }) => {
   const {
     data: { updateUser },
   } = await API.graphql(
@@ -29,7 +27,8 @@ const UpdateUser = async ({ id, email, locale, firstName, lastName, address, cit
         postalCode,
         country,
         phone,
-        image
+        image,
+        agreement
       },
       authMode:"AMAZON_COGNITO_USER_POOLS"
     })

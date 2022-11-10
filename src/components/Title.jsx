@@ -6,11 +6,7 @@ const Title = ({ text, color, size, back }) => (
       !size ? "text-xl" : size
     } font-bold mb-2`}
   >
-    {back && (
-      <Link to={back}>
-        <i className="bx bx-left-arrow-circle mr-2" />
-      </Link>
-    )}
+
     {text}
   </h1>
 );

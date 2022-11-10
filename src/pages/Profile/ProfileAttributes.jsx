@@ -10,6 +10,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const { state } = useContext(AppContext);
   const { user } = state;
   const { loadUser, setLoading } = useOutletContext();
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
@@ -18,7 +19,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const [province, setProvince] = useState("");
   const [country, setCountry] = useState("");
   const [phone, setPhone] = useState("");
-  const [agreement, setAgreement] = useState("");
+  const [agreement, setAgreement] = useState(false);
 
 
   /** Fill the form */
@@ -26,7 +27,8 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
     setProvince("qc");
     setCountry("CA");
     if (user) {
-      //console.log("User from DB " + JSON.stringify(user));
+      console.log("User from DB " + JSON.stringify(user));
+      
       setFirstName(user?.firstName || "");
       setLastName(user?.lastName || "");
       setAddress(user?.address || "");
@@ -36,7 +38,6 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
       setPhone(user?.phone || "");
       setCountry(user?.country || "");
       setAgreement(user?.agreement || false);
-      //setBithdate(user?.birthdate ? FormatDate.Show(user?.birthdate, user.locale) : "");
     }
   }, [user]);
   
@@ -49,7 +50,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const handleAttributes = async () => {
     loading();
     try {
-      console.log('Before updating ' + JSON.stringify(user));
+      //console.log('Before updating current user ' + JSON.stringify(user));
       await Mudations.UpdateUser({
         id: user.id,
         email: user.email,
@@ -63,10 +64,8 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
         country: country,
         phone: phone,
         agreement: agreement
-        //name: user.firstName + ' ' + user.lastName,
-        //birthdate: '1900-01-01',
       });
-      console.log('After update' + JSON.stringify(user));
+      //console.log('After update' + JSON.stringify(user));
       loadUser({ force: true, email: user.email });
       setAlert({
         type: "success",
@@ -82,6 +81,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const disabledAttributes = () => !firstName || !lastName || !agreement;
 
   return (
+
     <Form>
       <div className="mb-4 w-full flex flex-col gap-4 justify-center">
         <Picture/>
@@ -140,9 +140,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
           handler={setPhone}
           error={!phone}
         />
-
         <Agreement
-           placeholder={LANGUAGES[user.locale].Profile.Agreement}
            value={agreement}
            handler={setAgreement}
            error={!agreement}

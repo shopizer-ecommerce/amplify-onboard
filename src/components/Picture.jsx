@@ -15,7 +15,7 @@ const Picture = () => {
       setImage(user?.image || "");
       const getProfilePicture = () => {
         let imgName = user.id + ".jpeg";
-        console.log('Image name ' + imgName);
+        //console.log('Image name ' + imgName);
         Storage.get(imgName)
           .then(url => {
             var myRequest = new Request(url);

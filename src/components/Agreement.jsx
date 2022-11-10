@@ -3,9 +3,8 @@ import { LANGUAGES } from "../constants";
 import { AppContext } from "../context";
 import Modal from 'react-modal';
 
-const Agreement = ({ placeholder, value, handler, showTooltip }) => {
+const Agreement = ({  value, handler  }) => {
   const { state } = useContext(AppContext);
-  const [checked, setChecked] = useState("");
   const [modalOpen, setModalOpen] = useState();
   
   useEffect(() => {
@@ -21,29 +20,25 @@ const Agreement = ({ placeholder, value, handler, showTooltip }) => {
   }
 
   function handleCheckbox(e) {
+    //console.log('Checkbox ' + e + ' value ' + value);
     if(e == 'on') {
-        if(!checked || checked === '') {
-            setChecked('checked');
-            handler(true);
+        if(value) {
+          handler(false);
         } else {
-            setChecked('');
-            handler(false);
+          handler(true);
         }
-    } else {
-        setChecked('');
-        handler(false);
-    }
+    } 
   }
 
 
 
   return (
     
-    <div> 
+    <div>
       <fieldset>
       <legend className="sr-only">Checkbox variants</legend>
         <div className="flex items-center items-start mb-4">
-            <input id="checkbox" aria-describedby="checkbox" onChange={(e) => handleCheckbox(e.target.value)} type="checkbox" className="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded" checked={checked}/>
+            <input id="checkbox" aria-describedby="checkbox" onChange={(e) => handleCheckbox(e.target.value)} type="checkbox" className="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded" checked={value === true ? 'checked':''}/>
             <label className="text-sm ml-3 font-medium text-gray-900">{LANGUAGES[state.lang].Profile.Agree} <a href="#" onClick={openModal} className="text-blue-600 hover:underline">{LANGUAGES[state.lang].Profile.TermsConditions} </a></label>
         </div>
       </fieldset>
