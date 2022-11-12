@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { AppContext } from "../context";
 import { Storage } from "aws-amplify";
 import { LANGUAGES } from "../constants";
@@ -6,8 +6,14 @@ import { LANGUAGES } from "../constants";
 Storage.configure({ level: 'private' });
 
 const Picture = () => {
+
   const { state } = useContext(AppContext);
   const { user } = state;
+
+  const inputFile = useRef(null);
+  const [image, setImage] = useState("");
+
+  const [file, setFile] = useState();
 
   useEffect(() => {
     if (user) {
@@ -32,14 +38,12 @@ const Picture = () => {
     }
   }, [user]);
 
-  const [image, setImage] = useState("");
-
-
-
-  const onProcessFile = e => {
-    e.preventDefault();
+  function handleChange(event) {
+    
+   // e.preventDefault();
     let reader = new FileReader();
-    let file = e.target.files[0];
+    let file = event.target.files[0];
+    setFile(event.target.files[0])
     try {
       reader.readAsDataURL(file);
     } catch (err) {
@@ -55,36 +59,45 @@ const Picture = () => {
     })
       .then(result => console.log('Success ' + result))
       .catch(err => console.log(err));
+  }
+
+  const onButtonClick = () => {
+    // `current` points to the mounted file input element
+    inputFile.current.click();
   };
 
-
   return (
-    <div className="relative">
-          <figure className="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
-              <img className="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" src={image} alt="" width="384"/>
-              <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
-            <blockquote>
-              <p className="text-lg font-medium">
-              {LANGUAGES[state.lang].Profile.ImageText}
-              </p>
-            </blockquote>
-          <figcaption className="font-medium">
-            <div className="text-sky-500 dark:text-sky-400">
-            <label onChange={onProcessFile} htmlFor="formId">
-              <input name="" type="file" id="formId" hidden />
-              <span role="button">
-              <img src="./upload.png" className="profileIcon" alt="{LANGUAGES[state.lang].Profile.UploadImage}"/>
-              {LANGUAGES[state.lang].Profile.UploadImage}
-              </span>
-          </label>
-            </div>
-          </figcaption>
-          </div>
-          </figure>
 
+
+
+    <div className="profilePictureArea">
+      <label className="block text-sm font-medium text-gray-700 profilePictureLabel">
+      {LANGUAGES[state.lang].Profile.Picture}
+      </label>
+
+      <div className="mt-1 flex items-center">
+      <span className="inline-block h-20 w-20 rounded-full overflow-hidden bg-gray-100">
+      {image === null && (
+        <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+        
+          <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      )}
+      {image != null && (
+        <img src={image} alt=""/>
+      )}
+      </span>
+
+      <input type="file" onChange={handleChange} ref={inputFile} style={{ display: 'none' }} />
+      <button type="button" onClick={onButtonClick} className="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          {LANGUAGES[user.locale].Change}
+      </button>
+
+      </div>
     </div>
 
   );
 };
+
 
 export default Picture;

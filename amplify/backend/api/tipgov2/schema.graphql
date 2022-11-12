@@ -16,7 +16,13 @@ type User @model @auth(rules: [{ allow: owner, operations: [create, read, update
   country: String
   phone: String
   agreement: Boolean
-  image: String
+  image: String,
+  banking: String,
+  transit: String,
+  account: String,
+  verified: Boolean,
+  export: AWSDate,
+  hotel: String,
   _version: String
 }
 

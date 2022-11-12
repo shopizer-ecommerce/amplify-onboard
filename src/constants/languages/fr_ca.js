@@ -1,5 +1,6 @@
 const fr_ca_lang = {
   Close: "Fermer",
+  Change: "Changer",
   Loading: "Chargement",
   Email: "Courriel",
   Password: "Mot de passe",
@@ -16,6 +17,7 @@ const fr_ca_lang = {
     "en-US": "Anglais",
     "es-ES": "Espagnol",
   },
+  lang: "fr",
   NotFound: {
     Sorry: "Désolé",
     PageNotFound: "Page introuvable",
@@ -60,6 +62,8 @@ const fr_ca_lang = {
     ConfirmRegistrationButton: "Confirmer",
   },
   Profile: {
+    PersonalInfoTitle: "Informations personnelles",
+    PersonalInfoText: "Utiliser une adresse permanente permettant de recevoir du courrier.",
     Profile: "Profile",
     SignOut: "Se déconnecter",
     ChangeEmail: "Changer l'adresse de courriel",
@@ -88,6 +92,7 @@ const fr_ca_lang = {
     UploadImage: 'Ajouter une photo de profile',
     ImageText: "Votre photo profile Tip N Go sera affichée sur le formulaire de paiement. Veuillez vous assurer d'une bonne qualité d'image idéalement prise sur un fond pâle.",
     ChangeAttributes: 'Mettre à jour le profile',
+    ChangeBanking: 'Mettre à jour les informations bancaires',
     AttributesSuccess: 'Le profile a été mis à jour avec succès!',
     Provinces: {
       "qc": "Québec",
@@ -95,7 +100,12 @@ const fr_ca_lang = {
     },
     CountryList: {
       "CA": "Canada"
-    }
+    },
+    BankingInfoTitle: "Informations bancaires",
+    BankingInfoText:"Les informations relatives aux paiements bancaires qui vous seront effectués. Assurez-vous de bien saisir les informations telles qu'inscrites sur un chèque personnel.",
+    FinantialInformationNumber: "Numéro d'institution",
+    FinantialTransitNumber: "Numéro de transit",
+    FinantialAccountNumber: "Numéro de compte",
   }
 };
 

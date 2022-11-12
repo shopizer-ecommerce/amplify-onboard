@@ -22,6 +22,12 @@ export const createUser = /* GraphQL */ `
       phone
       agreement
       image
+      banking
+      transit
+      account
+      verified
+      export
+      hotel
       _version
       createdAt
       updatedAt
@@ -50,6 +56,12 @@ export const updateUser = /* GraphQL */ `
       phone
       agreement
       image
+      banking
+      transit
+      account
+      verified
+      export
+      hotel
       _version
       createdAt
       updatedAt
@@ -78,6 +90,12 @@ export const deleteUser = /* GraphQL */ `
       phone
       agreement
       image
+      banking
+      transit
+      account
+      verified
+      export
+      hotel
       _version
       createdAt
       updatedAt

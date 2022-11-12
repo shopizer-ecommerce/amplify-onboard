@@ -19,6 +19,12 @@ export const getUser = /* GraphQL */ `
       phone
       agreement
       image
+      banking
+      transit
+      account
+      verified
+      export
+      hotel
       _version
       createdAt
       updatedAt
@@ -57,6 +63,12 @@ export const listUsers = /* GraphQL */ `
         phone
         agreement
         image
+        banking
+        transit
+        account
+        verified
+        export
+        hotel
         _version
         createdAt
         updatedAt
@@ -97,6 +109,12 @@ export const userByEmail = /* GraphQL */ `
         phone
         agreement
         image
+        banking
+        transit
+        account
+        verified
+        export
+        hotel
         _version
         createdAt
         updatedAt

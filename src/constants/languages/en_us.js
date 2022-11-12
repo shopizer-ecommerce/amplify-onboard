@@ -1,5 +1,6 @@
 const en_us_lang = {
   Close: "Close",
+  Change: "Change",
   Loading: "Loading",
   Email: "Email",
   Password: "Password",
@@ -15,6 +16,7 @@ const en_us_lang = {
     "en-US": "English",
     "pt-BR": "Portuguese",
   },
+  lang: "en",
   NotFound: {
     Sorry: "Sorry",
     PageNotFound: "Page Not Found",
@@ -56,6 +58,8 @@ const en_us_lang = {
     ConfirmRegistrationButton: "Confirm",
   },
   Profile: {
+    PersonalInfoTitle: "Personal information",
+    PersonalInfoText: "Use a permanent address where you can receive mail.",
     Profile: "Profile",
     SignOut: "Sign Out",
     ChangeEmail: "Change Email",
@@ -85,6 +89,7 @@ const en_us_lang = {
     ImageText: 'Your Tip N Go Profile image to be displayed in the payment page. Please make sure that the image is clear and ideally on a white background',
     Birthdate: 'Birth Date',
     ChangeAttributes: 'Update profile',
+    ChangeBanking: 'Update banking information',
     AttributesSuccess: 'Profile Updated successfully!',
     Provinces: {
       "qc": "Qubec",
@@ -93,8 +98,11 @@ const en_us_lang = {
     CountryList: {
       "CA": "Canada"
     },
-
-
+    BankingInfoTitle: "Banking informations",
+    BankingInfoText:"Relative banking informations for payouts. Please make sure to capture your bank account informations according to what is displayed on a personal cheque.",
+    FinantialInformationNumber: "Financial Institution Number",
+    FinantialTransitNumber: "Transit Number",
+    FinantialAccountNumber: "Account Number",
   },
 };
 
