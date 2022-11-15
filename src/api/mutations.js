@@ -10,7 +10,7 @@ const CreateUser = async (email, locale) => {
   return createUser;
 };
 
-const UpdateUser = async ({ id, email, locale, firstName, lastName, address, city, province, country, postalCode, phone, image, agreement, banking, transit, account }) => {
+const UpdateUser = async ({ id, email, locale, firstName, lastName, address, city, province, country, postalCode, phone, image, agreement, banking, transit, account, verified }) => {
   const {
     data: { updateUser },
   } = await API.graphql(
@@ -31,7 +31,8 @@ const UpdateUser = async ({ id, email, locale, firstName, lastName, address, cit
         agreement,
         banking,
         transit,
-        account
+        account,
+        verified
       },
       authMode:"AMAZON_COGNITO_USER_POOLS"
     })

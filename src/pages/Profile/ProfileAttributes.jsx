@@ -23,6 +23,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const [transit, setTransit] = useState("");
   const [account, setAccount] = useState("");
   const [agreement, setAgreement] = useState(false);
+  const [verified, setVerified] = useState(false);
 
   const handleAccount= event => {
     //const result = event.target.value.replace(/\D/g, '');
@@ -34,8 +35,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   };
 
   const handleBankNumber= event => {
- 
-    if (isNaN(event) || event < 0) {
+    if (isNaN(event) || event < 0 || event.length > 3 ) {
     } else {
       setBanking(event);
     }
@@ -69,6 +69,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
       setBanking(user?.banking || "");
       setTransit(user?.transit || "");
       setAccount(user?.account || "");
+      setVerified(user?.verified || false);
     }
   }, [user]);
   
@@ -98,7 +99,8 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
         agreement: agreement,
         banking: banking,
         transit: transit,
-        account: account
+        account: account,
+        verified: verified
       });
       //console.log('After update' + JSON.stringify(user));
       loadUser({ force: true, email: user.email });

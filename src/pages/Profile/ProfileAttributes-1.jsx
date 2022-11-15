@@ -20,6 +20,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const [country, setCountry] = useState("");
   const [phone, setPhone] = useState("");
   const [agreement, setAgreement] = useState(false);
+  const [verified, setVerified] = useState(false);
 
 
   /** Fill the form */
@@ -27,7 +28,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
     setProvince("qc");
     setCountry("CA");
     if (user) {
-      console.log("User from DB " + JSON.stringify(user));
+      //console.log("User from DB " + JSON.stringify(user));
       
       setFirstName(user?.firstName || "");
       setLastName(user?.lastName || "");
@@ -38,6 +39,9 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
       setPhone(user?.phone || "");
       setCountry(user?.country || "");
       setAgreement(user?.agreement || false);
+      setVerified(user?.verified || false);
+    } else {
+      setVerified(false);
     }
   }, [user]);
   
@@ -46,6 +50,11 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
     setAlert();
     setLoading(true);
   };
+
+  const isVerified = () => {
+    console.log('Verified ' + verified);
+    return this.verified;
+  }
 
   const handleAttributes = async () => {
     loading();
@@ -63,7 +72,8 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
         province: province,
         country: country,
         phone: phone,
-        agreement: agreement
+        agreement: agreement,
+        verified: isVerified()
       });
       //console.log('After update' + JSON.stringify(user));
       loadUser({ force: true, email: user.email });
@@ -140,12 +150,15 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
           handler={setPhone}
           error={!phone}
         />
+
+
         <Agreement
            value={agreement}
            handler={setAgreement}
            error={!agreement}
         />
 
+        
         <Button
           text={LANGUAGES[user.locale].Profile.ChangeAttributes}
           disabled={disabledAttributes()}
