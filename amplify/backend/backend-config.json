@@ -62,12 +62,7 @@
       }
     }
   },
-  "hosting": {
-    "S3AndCloudFront": {
-      "service": "S3AndCloudFront",
-      "providerPlugin": "awscloudformation"
-    }
-  },
+  "hosting": {},
   "storage": {
     "tipngov2profile": {
       "service": "S3",

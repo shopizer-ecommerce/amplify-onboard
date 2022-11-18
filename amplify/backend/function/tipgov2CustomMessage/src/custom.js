@@ -36,11 +36,8 @@ function handleTranslation(locale) {
 		case 'en-US':
 			lang = require('./en-US');
 			return lang;
-		case 'pt-BR':
-			lang = require('./pt-BR');
-			return lang;
 		default:
-			lang = require('./en-US');
+			lang = require('./fr-CA');
 			return lang;
 	}
 }

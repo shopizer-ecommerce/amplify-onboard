@@ -23,7 +23,7 @@ const fr_ca_lang = {
     PageNotFound: "Page introuvable",
   },
   Home: {
-    CompleteProfile: "Veuillez compléter votre profile"
+    CompleteProfile: "Veuillez compléter votre profil"
   },
   CommonError: {
     Login: "Un problème est survenu lors de l'authentification, vérifiez votre nom d'usager et mot de passe",
@@ -53,7 +53,7 @@ const fr_ca_lang = {
     RedefinePasswordSuccess: "Password changed successfully!",
     RedefinePasswordButton: "Changer le mot de passe",
     SignUpTitle: "Crééer un compte",
-    SignUpSuccess: "Vérifiez votre courriel",
+    SignUpSuccess: "Vérifiez votre courriel, vous avez reçu un code permettant d'accéder au site",
     SignUpButton: "Créer",
     ConfirmRegistrationTitle: "Confirmez l'enregistrement de votre compte",
     ResendConfirmationCode: "Envoyer un nouveau code de vérification",
@@ -64,7 +64,7 @@ const fr_ca_lang = {
   Profile: {
     PersonalInfoTitle: "Informations personnelles",
     PersonalInfoText: "Utiliser une adresse permanente permettant de recevoir du courrier.",
-    Profile: "Profile",
+    Profile: "Profil",
     SignOut: "Se déconnecter",
     ChangeEmail: "Changer l'adresse de courriel",
     CurrentPassword: "Mot de passe actuel",
@@ -89,11 +89,11 @@ const fr_ca_lang = {
     Agreement: 'Termes et conditions',
     Phone: 'Téléphone',
     Picture: 'Photo',
-    UploadImage: 'Ajouter une photo de profile',
-    ImageText: "Votre photo profile Tip N Go sera affichée sur le formulaire de paiement. Veuillez vous assurer d'une bonne qualité d'image idéalement prise sur un fond pâle.",
-    ChangeAttributes: 'Mettre à jour le profile',
+    UploadImage: 'Ajouter une photo de profil',
+    ImageText: "Votre photo profil Tip N Go sera affichée sur le formulaire de paiement. Veuillez vous assurer d'une bonne qualité d'image idéalement prise sur un fond pâle.",
+    ChangeAttributes: 'Mettre à jour le profil',
     ChangeBanking: 'Mettre à jour les informations bancaires',
-    AttributesSuccess: 'Le profile a été mis à jour avec succès!',
+    AttributesSuccess: 'Le profil a été mis à jour avec succès!',
     Provinces: {
       "qc": "Québec",
       "on": "Ontario"

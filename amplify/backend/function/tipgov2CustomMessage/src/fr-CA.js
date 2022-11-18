@@ -5,7 +5,7 @@ async function signUpMessage(event, generateEmailBody) {
       <p>Bienvenue à ${process.env.TITLE},</p>
       <p>Votre couriel enregistré est ${event.request.userAttributes.email} votre code de vérification est ${event.request.codeParameter}</p>
       <br />
-      <p>Entrez votre code dans le champs requis à cet effet ou <a href="${process.env.SITE_URL}confirm-registration?lang=${event.request.userAttributes.locale}&email=${event.request.userAttributes.email}&code=${event.request.codeParameter}">cliquer ce lien pour activer automatiquement</a>.</p>
+      <p>Entrez votre code dans le champs requis à cet effet ou <a href="${process.env.SITE_URL}confirm-registration?lang=${event.request.userAttributes.locale}&email=${event.request.userAttributes.email}&code=${event.request.codeParameter}">cliquer ce lien pour activer automatiquement votre compte</a>.</p>
       `),
 	};
 	return event;

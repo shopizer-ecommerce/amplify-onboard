@@ -5,7 +5,7 @@ async function signUpMessage(event, generateEmailBody) {
       <p>Welcome to ${process.env.TITLE},</p>
       <p>Your registered email is ${event.request.userAttributes.email} and your verification code is: ${event.request.codeParameter}</p>
       <br />
-      <p>Enter your code in the field provided or <a href="${process.env.SITE_URL}confirm-registration?lang=${event.request.userAttributes.locale}&email=${event.request.userAttributes.email}&code=${event.request.codeParameter}">click here</a>.</p>
+      <p>Enter your code in the field provided or <a href="${process.env.SITE_URL}confirm-registration?lang=${event.request.userAttributes.locale}&email=${event.request.userAttributes.email}&code=${event.request.codeParameter}">click here to activate your accounts</a>.</p>
       `),
 	};
 	return event;

@@ -1,16 +1,24 @@
 {
   "dev": {
+    "awscloudformation": {},
+    "categories": {
+      "function": {
+        "tipgov2CustomMessage": {}
+      }
+    }
+  },
+  "sandbox": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-tipgov2-dev-231444-authRole",
-      "UnauthRoleArn": "arn:aws:iam::013537969376:role/amplify-tipgov2-dev-231444-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::013537969376:role/amplify-tipgov2-dev-231444-authRole",
+      "AuthRoleName": "amplify-tipgov2-sandbox-184610-authRole",
+      "UnauthRoleArn": "arn:aws:iam::844178842851:role/amplify-tipgov2-sandbox-184610-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::844178842851:role/amplify-tipgov2-sandbox-184610-authRole",
       "Region": "ca-central-1",
-      "DeploymentBucketName": "amplify-tipgov2-dev-231444-deployment",
-      "UnauthRoleName": "amplify-tipgov2-dev-231444-unauthRole",
-      "StackName": "amplify-tipgov2-dev-231444",
-      "StackId": "arn:aws:cloudformation:ca-central-1:013537969376:stack/amplify-tipgov2-dev-231444/d511a1c0-5bee-11ed-9c7f-0e0aefc04f50",
-      "AmplifyAppId": "dyi9xupnjcigl",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-tipgov2-dev-231444-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+      "DeploymentBucketName": "amplify-tipgov2-sandbox-184610-deployment",
+      "UnauthRoleName": "amplify-tipgov2-sandbox-184610-unauthRole",
+      "StackName": "amplify-tipgov2-sandbox-184610",
+      "StackId": "arn:aws:cloudformation:ca-central-1:844178842851:stack/amplify-tipgov2-sandbox-184610/04410a10-66d2-11ed-96c8-0ef28af1caaa",
+      "AmplifyAppId": "d342z1f5gwadi0",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-tipgov2-sandbox-184610-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
@@ -18,9 +26,15 @@
       },
       "function": {
         "tipgov2CustomMessage": {
-          "deploymentBucketName": "amplify-tipgov2-dev-231444-deployment",
-          "s3Key": "amplify-builds/tipgov2CustomMessage-4a71624f627073594842-build.zip"
+          "deploymentBucketName": "amplify-tipgov2-sandbox-184610-deployment",
+          "s3Key": "amplify-builds/tipgov2CustomMessage-784b5643466a6a504855-build.zip"
         }
+      },
+      "api": {
+        "tipgov2": {}
+      },
+      "storage": {
+        "tipngov2profile": {}
       }
     }
   }
