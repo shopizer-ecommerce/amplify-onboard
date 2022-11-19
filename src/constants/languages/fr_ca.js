@@ -29,7 +29,7 @@ const fr_ca_lang = {
     Login: "Un problème est survenu lors de l'authentification, vérifiez votre nom d'usager et mot de passe",
     SendCode: "Le code d'accès n'a pu être envoyé, veuillez vérifier votre courriel",
     RedefinePassword:
-      "Erreur lors duchangement de mot de passe, le mot de passe, le courriel et le code fourni sont incorrect",
+      "Erreur lors du changement de mot de passe, le mot de passe, le courriel et le code fourni sont incorrect",
     SignUp: "L'enregistrement n'est pas possible, Le courriel existe déjà ou le mot de passe est incorrect",
     ConfirmSignUp: "La vérification a échouée, le courriel ou le code saisi est invalide",
     CodeError: "Le code de vérification soumis est invalide",

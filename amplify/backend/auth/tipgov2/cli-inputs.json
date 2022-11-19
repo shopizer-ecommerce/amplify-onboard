@@ -2,7 +2,7 @@
   "version": "1",
   "cognitoConfig": {
     "identityPoolName": "tipgov2",
-    "allowUnauthenticatedIdentities": true,
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "tipgov61939aed",
     "userPoolName": "tipgov2",
     "autoVerifiedAttributes": [
@@ -17,13 +17,8 @@
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": true,
-    "passwordPolicyMinLength": "8",
-    "passwordPolicyCharacters": [
-      "Requires Lowercase",
-      "Requires Uppercase",
-      "Requires Numbers",
-      "Requires Symbols"
-    ],
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
     "requiredAttributes": [
       "email",
       "locale"
@@ -42,8 +37,7 @@
     "sharedId": "61939aed",
     "resourceName": "tipgov2",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "manual",
-    "thirdPartyAuth": false,
+    "useDefault": "default",
     "usernameAttributes": [
       "email"
     ],
@@ -85,9 +79,9 @@
     ],
     "permissions": [],
     "authTriggerConnections": "[\n  {\n    \"triggerType\": \"CustomMessage\",\n    \"lambdaFunctionName\": \"tipgov2CustomMessage\"\n  }\n]",
-    "authProviders": [],
     "parentStack": {
       "Ref": "AWS::StackId"
-    }
+    },
+    "authProviders": []
   }
-}
+} 

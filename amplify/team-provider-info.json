@@ -1,40 +1,29 @@
 {
-  "dev": {
-    "awscloudformation": {},
-    "categories": {
-      "function": {
-        "tipgov2CustomMessage": {}
-      }
-    }
-  },
-  "sandbox": {
+  "prodca": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-tipgov2-sandbox-184610-authRole",
-      "UnauthRoleArn": "arn:aws:iam::844178842851:role/amplify-tipgov2-sandbox-184610-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::844178842851:role/amplify-tipgov2-sandbox-184610-authRole",
+      "AuthRoleName": "amplify-tipgov2-prodca-134718-authRole",
+      "UnauthRoleArn": "arn:aws:iam::844178842851:role/amplify-tipgov2-prodca-134718-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::844178842851:role/amplify-tipgov2-prodca-134718-authRole",
       "Region": "ca-central-1",
-      "DeploymentBucketName": "amplify-tipgov2-sandbox-184610-deployment",
-      "UnauthRoleName": "amplify-tipgov2-sandbox-184610-unauthRole",
-      "StackName": "amplify-tipgov2-sandbox-184610",
-      "StackId": "arn:aws:cloudformation:ca-central-1:844178842851:stack/amplify-tipgov2-sandbox-184610/04410a10-66d2-11ed-96c8-0ef28af1caaa",
+      "DeploymentBucketName": "amplify-tipgov2-prodca-134718-deployment",
+      "UnauthRoleName": "amplify-tipgov2-prodca-134718-unauthRole",
+      "StackName": "amplify-tipgov2-prodca-134718",
+      "StackId": "arn:aws:cloudformation:ca-central-1:844178842851:stack/amplify-tipgov2-prodca-134718/af46eda0-6810-11ed-b6f8-0ec1f0a54474",
       "AmplifyAppId": "d342z1f5gwadi0",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-tipgov2-sandbox-184610-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-tipgov2-prodca-134718-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
         "tipgov2": {}
       },
-      "function": {
-        "tipgov2CustomMessage": {
-          "deploymentBucketName": "amplify-tipgov2-sandbox-184610-deployment",
-          "s3Key": "amplify-builds/tipgov2CustomMessage-784b5643466a6a504855-build.zip"
-        }
-      },
-      "api": {
-        "tipgov2": {}
-      },
       "storage": {
         "tipngov2profile": {}
+      },
+      "function": {
+        "tipgov2CustomMessage": {
+          "deploymentBucketName": "amplify-tipgov2-prodca-134718-deployment",
+          "s3Key": "amplify-builds/tipgov2CustomMessage-514d73786b3238777245-build.zip"
+        }
       }
     }
   }

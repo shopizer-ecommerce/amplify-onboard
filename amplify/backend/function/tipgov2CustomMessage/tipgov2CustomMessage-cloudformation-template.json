@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.5.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Linux\",\"createdBy\":\"AmplifyAdmin\",\"createdWith\":\"10.5.0-rc.6c1d5e642.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
     "REDIRECTURL": {
       "Type": "String",
