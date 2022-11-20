@@ -62,7 +62,13 @@
       }
     }
   },
-  "hosting": {},
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual"
+    }
+  },
   "storage": {
     "tipngov2profile": {
       "service": "S3",

@@ -22,6 +22,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const [banking, setBanking] = useState("");
   const [transit, setTransit] = useState("");
   const [account, setAccount] = useState("");
+  const [image, setImage] = useState("");
   const [agreement, setAgreement] = useState(false);
   const [verified, setVerified] = useState(false);
 
@@ -69,9 +70,11 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
       setBanking(user?.banking || "");
       setTransit(user?.transit || "");
       setAccount(user?.account || "");
+      setImage(user?.image || "");
       setVerified(user?.verified || false);
     }
   }, [user]);
+
   
 
   const loading = () => {
@@ -100,6 +103,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
         banking: banking,
         transit: transit,
         account: account,
+        image: image,
         verified: verified
       });
       //console.log('After update' + JSON.stringify(user));
@@ -137,7 +141,9 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
               <div className="px-4 py-5 bg-white sm:p-6">
 
               {/** Profile Picture */}
-              <Picture/>
+              <Picture
+               handler={setImage}
+              />
 
               {/** Profile Infos */}
                 <div className="grid grid-cols-6 gap-6">

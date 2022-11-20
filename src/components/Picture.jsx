@@ -2,18 +2,22 @@ import React, { useState, useRef, useEffect, useContext } from "react";
 import { AppContext } from "../context";
 import { Storage } from "aws-amplify";
 import { LANGUAGES } from "../constants";
+import Mudations from "../api/mutations";
+import { useOutletContext } from "react-router-dom";
 
 Storage.configure({ level: 'private' });
 
-const Picture = () => {
+const Picture = (handler) => {
 
   const { state } = useContext(AppContext);
   const { user } = state;
+  const { setLoading } = useOutletContext();
 
   const inputFile = useRef(null);
   const [image, setImage] = useState("");
 
   const [file, setFile] = useState();
+
 
   useEffect(() => {
     if (user) {
@@ -38,6 +42,11 @@ const Picture = () => {
     }
   }, [user]);
 
+
+  function picture(e) {
+    handler(e);
+  }
+
   function handleChange(event) {
     
    // e.preventDefault();
@@ -53,13 +62,18 @@ const Picture = () => {
       setImage(reader.result);
     };
     //console.log('Image has been sent ' + image);
+    let image = user.id + ".jpeg";
+
     Storage.put(user.id + ".jpeg", file, {
       level: "private",
       contentType: "image/jpeg"
     })
       .then(result => console.log('Success ' + result))
       .catch(err => console.log(err));
+;
+
   }
+
 
   const onButtonClick = () => {
     // `current` points to the mounted file input element

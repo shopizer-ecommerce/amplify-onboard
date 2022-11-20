@@ -24,6 +24,15 @@
           "deploymentBucketName": "amplify-tipgov2-prodca-134718-deployment",
           "s3Key": "amplify-builds/tipgov2CustomMessage-514d73786b3238777245-build.zip"
         }
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d342z1f5gwadi0",
+          "type": "manual"
+        }
+      },
+      "api": {
+        "tipgov2": {}
       }
     }
   }
