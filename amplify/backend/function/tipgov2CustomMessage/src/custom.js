@@ -9,8 +9,8 @@
       <tbody>
         <tr>
           <td style="text-align:center">
-            <img alt="Logo" src="${process.env.SITE_LOGO}" style="height:48px; width:48px" />
-            <p style="color:#6366f1; margin-top:2px"><strong>${process.env.TITLE}</strong></p>
+            <img alt="Logo" src="https://app.tip-go.ca/logo_tng-small.png" style="height:48px; width:48px" />
+            <p style="color:#6366f1; margin-top:2px"><strong>TipNGo</strong></p>
           </td>
         </tr>
         <tr>
@@ -20,7 +20,7 @@
         </tr>
 				<tr>
 				<td style="padding-top:25px; text-align:center">
-					${process.env.SITE_URL}
+				https://app.tip-go.ca
 				</td>
 			</tr>
       </tbody>
