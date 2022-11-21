@@ -27,7 +27,9 @@ export const createUser = /* GraphQL */ `
       account
       verified
       export
+      extract
       hotel
+      shortId
       _version
       createdAt
       updatedAt
@@ -61,7 +63,9 @@ export const updateUser = /* GraphQL */ `
       account
       verified
       export
+      extract
       hotel
+      shortId
       _version
       createdAt
       updatedAt
@@ -95,7 +99,9 @@ export const deleteUser = /* GraphQL */ `
       account
       verified
       export
+      extract
       hotel
+      shortId
       _version
       createdAt
       updatedAt

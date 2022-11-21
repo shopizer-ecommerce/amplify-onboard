@@ -23,8 +23,11 @@ type User @model
   account: String,
   verified: Boolean,
   export: AWSDate,
+  extract: Boolean,
   hotel: String,
+  shortId: String
   _version: String
 }
+
 
 

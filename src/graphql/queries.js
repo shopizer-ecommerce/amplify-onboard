@@ -24,7 +24,9 @@ export const getUser = /* GraphQL */ `
       account
       verified
       export
+      extract
       hotel
+      shortId
       _version
       createdAt
       updatedAt
@@ -68,7 +70,9 @@ export const listUsers = /* GraphQL */ `
         account
         verified
         export
+        extract
         hotel
+        shortId
         _version
         createdAt
         updatedAt
@@ -114,7 +118,9 @@ export const userByEmail = /* GraphQL */ `
         account
         verified
         export
+        extract
         hotel
+        shortId
         _version
         createdAt
         updatedAt

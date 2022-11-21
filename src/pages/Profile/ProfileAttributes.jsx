@@ -18,11 +18,14 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const [postalCode, setPostalCode] = useState("");
   const [province, setProvince] = useState("");
   const [country, setCountry] = useState("");
+  const [hotel, setHotel] = useState("");
   const [phone, setPhone] = useState("");
   const [banking, setBanking] = useState("");
   const [transit, setTransit] = useState("");
   const [account, setAccount] = useState("");
   const [image, setImage] = useState("");
+  //const [shortId, setShortId] = useState("");
+  const [extract, setExtract] = useState(false);
   const [agreement, setAgreement] = useState(false);
   const [verified, setVerified] = useState(false);
 
@@ -53,8 +56,10 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
 
   /** Fill the form */
   useEffect(() => {
+    /** DEFAULT VALUES */
     setProvince("qc");
     setCountry("CA");
+    /** */
     if (user) {
       console.log("User from DB " + JSON.stringify(user));
       
@@ -71,8 +76,10 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
       setTransit(user?.transit || "");
       setAccount(user?.account || "");
       setImage(user?.image || "");
+      setHotel(user?.hotel || "");
+      setExtract(user?.extract || false);
       setVerified(user?.verified || false);
-    }
+    } 
   }, [user]);
 
   
@@ -86,7 +93,6 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
     loading();
     try {
       //console.log('Before updating current user ' + JSON.stringify(user));
-
       await Mudations.UpdateUser({
         id: user.id,
         email: user.email,
@@ -104,7 +110,9 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
         transit: transit,
         account: account,
         image: image,
-        verified: verified
+        hotel: hotel,
+        verified: verified,
+        extract: extract
       });
       //console.log('After update' + JSON.stringify(user));
       loadUser({ force: true, email: user.email });
