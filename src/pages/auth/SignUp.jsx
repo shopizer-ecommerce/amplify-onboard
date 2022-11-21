@@ -4,7 +4,7 @@ import { AppContext } from "../../context";
 import { LANGUAGES, ROUTES } from "../../constants";
 import { isValidEmail } from "../../helpers";
 import { AuthLink, AuthTitle, Button, Input } from "../../components";
-import SignUpImage from "../../images/logo_tng.jpeg";
+import SignUpImage from "../../images/logo_tng.svg";
 
 export default function SignUp() {
   const { state } = useContext(AppContext);

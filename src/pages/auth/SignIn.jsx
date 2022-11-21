@@ -10,7 +10,7 @@ import {
   Input,
   RememberMe,
 } from "../../components";
-import SignInImage from "../../images/logo_tng.jpeg";
+import SignInImage from "../../images/logo_tng.svg";
 
 export default function SignIn() {
   const location = useLocation();

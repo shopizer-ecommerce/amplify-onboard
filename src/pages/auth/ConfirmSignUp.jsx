@@ -5,7 +5,7 @@ import { AppContext } from "../../context";
 import { LANGUAGES, ROUTES } from "../../constants";
 import { isValidEmail } from "../../helpers";
 import { AuthLink, AuthTitle, Button, Input } from "../../components";
-import ConfirmSignUpImage from "../../images/logo_tng.jpeg";
+import ConfirmSignUpImage from "../../images/logo_tng.svg";
 
 export default function ConfirmSignUp() {
   const location = useLocation();
