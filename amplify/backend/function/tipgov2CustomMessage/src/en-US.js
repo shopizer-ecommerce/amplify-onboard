@@ -3,7 +3,7 @@ async function signUpMessage(event, generateEmailBody) {
 		emailSubject: `Tip N Go: Verification Code`,
 		emailMessage: generateEmailBody(`
       <p>Welcome to TipNGo</p>
-      <p>Your registered email is ${event.request.userAttributes.email} and your verification code is: ${event.request.codeParameter}</p>
+      <p>Your registered email is <strong>${event.request.userAttributes.email}</strong> and your verification code is: <strong>${event.request.codeParameter}</strong></p>
       <br />
       <p>Enter your code in the field provided or <a href="https://app.tip-go.ca/confirm-registration?lang=${event.request.userAttributes.locale}&email=${event.request.userAttributes.email}&code=${event.request.codeParameter}">click here to activate your accounts</a>.</p>
       `),

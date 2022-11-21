@@ -9,7 +9,7 @@
       <tbody>
         <tr>
           <td style="text-align:center">
-            <img alt="Logo" src="https://app.tip-go.ca/logo_tng-small.png" style="height:48px; width:48px" />
+            <img alt="Logo" src="https://app.tip-go.ca/logo_tng-small.png" style="width:120px;" />
             <p style="color:#6366f1; margin-top:2px"><strong>TipNGo</strong></p>
           </td>
         </tr>
