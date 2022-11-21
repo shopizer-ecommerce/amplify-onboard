@@ -25,7 +25,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const [account, setAccount] = useState("");
   const [image, setImage] = useState("");
   //const [shortId, setShortId] = useState("");
-  const [extract, setExtract] = useState(false);
+  const [ext, setExt] = useState(false);
   const [agreement, setAgreement] = useState(false);
   const [verified, setVerified] = useState(false);
 
@@ -77,7 +77,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
       setAccount(user?.account || "");
       setImage(user?.image || "");
       setHotel(user?.hotel || "");
-      setExtract(user?.extract || false);
+      setExt(user?.ext || false);
       setVerified(user?.verified || false);
     } 
   }, [user]);
@@ -112,7 +112,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
         image: image,
         hotel: hotel,
         verified: verified,
-        extract: extract
+        ext: ext
       });
       //console.log('After update' + JSON.stringify(user));
       loadUser({ force: true, email: user.email });
