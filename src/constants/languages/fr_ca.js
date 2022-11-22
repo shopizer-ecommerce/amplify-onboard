@@ -90,7 +90,7 @@ const fr_ca_lang = {
     Phone: 'Téléphone',
     Picture: 'Photo',
     UploadImage: 'Ajouter une photo de profil',
-    ImageText: "Votre photo profil Tip N Go sera affichée sur le formulaire de paiement. Veuillez vous assurer d'une bonne qualité d'image idéalement prise sur un fond pâle.",
+    ImageText: "Votre photo profil Tip&Go sera affichée sur le formulaire de paiement. Veuillez vous assurer d'une bonne qualité d'image idéalement prise sur un fond pâle.",
     ChangeAttributes: 'Mettre à jour le profil',
     ChangeBanking: 'Mettre à jour les informations bancaires',
     AttributesSuccess: 'Le profil a été mis à jour avec succès!',

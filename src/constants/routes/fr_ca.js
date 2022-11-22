@@ -5,7 +5,7 @@ const fr_ca_routes = {
   SIGN_UP: "/enregistrement",
   CONFIRM_SIGN_UP: "/confirmer-enregistrement",
   HOME: "/accueuil",
-  PROFILE: "/profile",
+  PROFILE: "/profil",
 };
 
 export default fr_ca_routes;
