@@ -30,4 +30,22 @@ type User @model
 }
 
 
+type Hotel @model
+  @auth(rules: [{ allow: owner, operations: [read] }]) {
+  id: ID! @primaryKey
+  hotelID: ID! @index(name: "byCodeByLocale", sortKeyFields: ["code","locale"])
+  locale: String! @index(name: "byLocale", queryField: "locale")
+  code: String!
+  name: String!
+  address: String
+  city: String
+  postalCode: String
+  province: String
+  country: String
+  phone: String
+  image: String,
+  _version: String
+}
+
+
 

@@ -14,3 +14,4 @@ export { default as Title } from "./Title";
 export { default as Phone } from "./Phone";
 export { default as Picture } from "./Picture";
 export { default as Agreement } from "./Agreement";
+export { default as Hotels } from "./Hotels";

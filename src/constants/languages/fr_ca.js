@@ -106,6 +106,10 @@ const fr_ca_lang = {
     FinantialInformationNumber: "Numéro d'institution",
     FinantialTransitNumber: "Numéro de transit",
     FinantialAccountNumber: "Numéro de compte",
+    HotelName: "Nom de l'hôtel",
+    HotelInfoTitle: "Informations sur l'hôtel",
+    HotelInfoText: "Sélectionnez depuis la liste le nom de l'hôtel qui sera utilisé par l'application de paiement",
+    ChangeHotel: "Mise à jour de l'hôtel",
   }
 };
 

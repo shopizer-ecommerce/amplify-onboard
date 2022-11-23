@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import { AppContext } from "../../context";
 import { LANGUAGES, PROVINCES, COUNTRY } from "../../constants";
 import Mudations from "../../api/mutations";
-import { Button, Form, Input, Select, Phone, Picture, Agreement } from "../../components";
+import { Button, Form, Input, Select, Hotels, Phone, Picture, Agreement } from "../../components";
 
 
 const ProfileAttributes = ({ handleErrors, setAlert }) => {
@@ -29,24 +29,35 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
   const [agreement, setAgreement] = useState(false);
   const [verified, setVerified] = useState(false);
 
-  const handleAccount= event => {
+
+  const hotels = [
+    { label: 'Hôtel Palace Royal', value: 'jaro_palace_royal' },
+    { label: 'Hôtel Plaza Québec', value: 'jaro_palace_royal' },
+    { label: 'Hôtel Québec Inn – Aéroport de Québec', value: 'jaro_palace_royal' },
+    { label: 'Hôtel Must – Aéroport de Québec', value: 'jaro_must' },
+    { label: 'Hôtel Lindbergh (Place Laurier)', value: 'jaro_lindberg' },
+    { label: 'Auberge Québec', value: 'jaro_auberge_quebec' },
+  ];
+
+
+  const handleAccount = event => {
     //const result = event.target.value.replace(/\D/g, '');
 
     if (isNaN(event) || event < 0) {
     } else {
-        setAccount(event);
+      setAccount(event);
     }
   };
 
-  const handleBankNumber= event => {
-    if (isNaN(event) || event < 0 || event.length > 3 ) {
+  const handleBankNumber = event => {
+    if (isNaN(event) || event < 0 || event.length > 3) {
     } else {
       setBanking(event);
     }
   };
 
-  const handleTransitNumber= event => {
- 
+  const handleTransitNumber = event => {
+
     if (isNaN(event) || event < 0) {
     } else {
       setTransit(event);
@@ -62,7 +73,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
     /** */
     if (user) {
       console.log("User from DB " + JSON.stringify(user));
-      
+
       setFirstName(user?.firstName || "");
       setLastName(user?.lastName || "");
       setAddress(user?.address || "");
@@ -79,10 +90,10 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
       setHotel(user?.hotel || "");
       setExt(user?.ext || false);
       setVerified(user?.verified || false);
-    } 
+    }
   }, [user]);
 
-  
+
 
   const loading = () => {
     setAlert();
@@ -130,32 +141,33 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
 
   const disabledAttributes = () => !firstName || !lastName || !agreement;
   const disabledBankingAttributes = () => !banking || !transit || !account;
+  const disableHotelAttribute = () => !hotel;
 
   return (
     <form action="#" method="POST">
-    <div className="mt-10 sm:mt-0">
-      <div className="md:grid md:grid-cols-3 md:gap-6">
-        <div className="md:col-span-1">
-          <div className="px-4 sm:px-0">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">{LANGUAGES[user.locale].Profile.PersonalInfoTitle}</h3>
-            <p className="mt-1 text-sm text-gray-600">
-            {LANGUAGES[user.locale].Profile.PersonalInfoText}
-            </p>
+      <div className="mt-10 sm:mt-0">
+        <div className="md:grid md:grid-cols-3 md:gap-6">
+          <div className="md:col-span-1">
+            <div className="px-4 sm:px-0">
+              <h3 className="text-lg font-medium leading-6 text-gray-900">{LANGUAGES[user.locale].Profile.PersonalInfoTitle}</h3>
+              <p className="mt-1 text-sm text-gray-600">
+                {LANGUAGES[user.locale].Profile.PersonalInfoText}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="mt-5 md:mt-0 md:col-span-2">
-          
+          <div className="mt-5 md:mt-0 md:col-span-2">
+
             <div className="shadow overflow-hidden sm:rounded-md">
               <div className="px-4 py-5 bg-white sm:p-6">
 
-              {/** Profile Picture */}
-              <Picture
-               handler={setImage}
-              />
+                {/** Profile Picture */}
+                <Picture
+                  handler={setImage}
+                />
 
-              {/** Profile Infos */}
+                {/** Profile Infos */}
                 <div className="grid grid-cols-6 gap-6">
-                  
+
                   <div className="col-span-6 sm:col-span-3">
                     <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.FirstName}</label>
                     <Input
@@ -207,7 +219,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
                       value={address}
                       handler={setAddress}
                       error={!address}
-                    />                  
+                    />
                   </div>
 
                   <div className="col-span-6 sm:col-span-6 lg:col-span-2">
@@ -243,11 +255,11 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
                     />
                   </div>
                   <div className="col-span-6 sm:col-span-3">
-                  <Agreement
-                    value={agreement}
-                    handler={setAgreement}
-                    error={!agreement}
-                  />
+                    <Agreement
+                      value={agreement}
+                      handler={setAgreement}
+                      error={!agreement}
+                    />
                   </div>
                 </div>
               </div>
@@ -260,79 +272,125 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
               />
 
             </div>
-          
+
+          </div>
         </div>
-      </div>
 
-      <div className="md:grid md:grid-cols-3 md:gap-6 childInfoBlock">
+        {/** */}
+        <div className="md:grid md:grid-cols-3 md:gap-6 childInfoBlock">
 
-      <div className="md:col-span-1">
-      <div className="px-4 sm:px-0">
-        <h3 className="text-lg font-medium leading-6 text-gray-900">{LANGUAGES[user.locale].Profile.BankingInfoTitle}</h3>
-        <p className="mt-1 text-sm text-gray-600">
-        {LANGUAGES[user.locale].Profile.BankingInfoText}
-        </p>
-      </div>
-    </div>
-    <div className="mt-5 md:mt-0 md:col-span-2">
-        <div className="shadow sm:rounded-md sm:overflow-hidden">
-          <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
-
-
-          <div className="col-span-6 sm:col-span-3">
-                    <label htmlFor="banking" className="block text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.FinantialInformationNumber}</label>
-                    <Input
-                      type="text"
-                      placeholder={LANGUAGES[user.locale].Profile.FinantialInformationNumber}
-                      value={banking}
-                      handler={handleBankNumber}
-                      error={!banking}
-                    />
-          </div>
-          
-          <div className="col-span-6 sm:col-span-3">
-                    <label htmlFor="transit" className="block text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.FinantialTransitNumber}</label>
-                    <Input
-                      type="text"
-                      placeholder={LANGUAGES[user.locale].Profile.FinantialTransitNumber}
-                      value={transit}
-                      handler={handleTransitNumber}
-                      error={!transit}
-                    />
-          </div>
-          
-          <div className="col-span-6 sm:col-span-3">
-                    <label htmlFor="account" className="block text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.FinantialAccountNumber}</label>
-                    <Input
-                      type="text"
-                      placeholder={LANGUAGES[user.locale].Profile.FinantialAccountNumber}
-                      value={account}
-                      handler={handleAccount}
-                      error={!account}
-                    />
-          </div>
-
-
-            <div>
-              <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                  <img src={`./cheque-${LANGUAGES[user.locale].lang}.png`} alt=""/>
-              </div>
+          <div className="md:col-span-1">
+            <div className="px-4 sm:px-0">
+              <h3 className="text-lg font-medium leading-6 text-gray-900">{LANGUAGES[user.locale].Profile.HotelInfoTitle}</h3>
+              <p className="mt-1 text-sm text-gray-600">
+                {LANGUAGES[user.locale].Profile.HotelInfoText}
+              </p>
             </div>
           </div>
-          <Button
+          <div className="mt-5 md:mt-0 md:col-span-2">
+            <div className="shadow sm:rounded-md">
+              <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
+
+
+                <div className="col-span-6 sm:col-span-3">
+                  <label htmlFor="banking" className="block text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.HotelName}</label>
+
+                  <Hotels
+                    handler={setHotel}
+                    value={hotels.filter(function(option) {
+                      return option.value === hotel;
+                    })}
+                    options={hotels}
+                  />
+
+                </div>
+
+              </div>
+              <Button
+                text={LANGUAGES[user.locale].Profile.ChangeHotel}
+                disabled={disableHotelAttribute()}
+                handler={() => handleAttributes()}
+                full
+              />
+            </div>
+
+          </div>
+
+        </div>
+        {/** */}
+
+        <div className="md:grid md:grid-cols-3 md:gap-6 childInfoBlock">
+
+          <div className="md:col-span-1">
+            <div className="px-4 sm:px-0">
+              <h3 className="text-lg font-medium leading-6 text-gray-900">{LANGUAGES[user.locale].Profile.BankingInfoTitle}</h3>
+              <p className="mt-1 text-sm text-gray-600">
+                {LANGUAGES[user.locale].Profile.BankingInfoText}
+              </p>
+            </div>
+          </div>
+          <div className="mt-5 md:mt-0 md:col-span-2">
+            <div className="shadow sm:rounded-md sm:overflow-hidden">
+              <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
+
+
+                <div className="col-span-6 sm:col-span-3">
+                  <label htmlFor="banking" className="block text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.FinantialInformationNumber}</label>
+                  <Input
+                    type="text"
+                    placeholder={LANGUAGES[user.locale].Profile.FinantialInformationNumber}
+                    value={banking}
+                    handler={handleBankNumber}
+                    error={!banking}
+                  />
+                </div>
+
+                <div className="col-span-6 sm:col-span-3">
+                  <label htmlFor="transit" className="block text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.FinantialTransitNumber}</label>
+                  <Input
+                    type="text"
+                    placeholder={LANGUAGES[user.locale].Profile.FinantialTransitNumber}
+                    value={transit}
+                    handler={handleTransitNumber}
+                    error={!transit}
+                  />
+                </div>
+
+                <div className="col-span-6 sm:col-span-3">
+                  <label htmlFor="account" className="block text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.FinantialAccountNumber}</label>
+                  <Input
+                    type="text"
+                    placeholder={LANGUAGES[user.locale].Profile.FinantialAccountNumber}
+                    value={account}
+                    handler={handleAccount}
+                    error={!account}
+                  />
+                </div>
+
+
+                <div>
+                  <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                    <img src={`./cheque-${LANGUAGES[user.locale].lang}.png`} alt="" />
+                  </div>
+                </div>
+              </div>
+              <Button
                 text={LANGUAGES[user.locale].Profile.ChangeBanking}
                 disabled={disabledBankingAttributes()}
                 handler={() => handleAttributes()}
                 full
               />
+            </div>
+
+          </div>
+
         </div>
-      
-    </div>
+
+
+
+
 
       </div>
-
-
-    </div>
     </form>
   );
 };

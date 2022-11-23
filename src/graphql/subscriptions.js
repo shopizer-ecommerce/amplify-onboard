@@ -100,3 +100,69 @@ export const onDeleteUser = /* GraphQL */ `
     }
   }
 `;
+export const onCreateHotel = /* GraphQL */ `
+  subscription OnCreateHotel($owner: String) {
+    onCreateHotel(owner: $owner) {
+      id
+      hotelID
+      locale
+      code
+      name
+      address
+      city
+      postalCode
+      province
+      country
+      phone
+      image
+      _version
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onUpdateHotel = /* GraphQL */ `
+  subscription OnUpdateHotel($owner: String) {
+    onUpdateHotel(owner: $owner) {
+      id
+      hotelID
+      locale
+      code
+      name
+      address
+      city
+      postalCode
+      province
+      country
+      phone
+      image
+      _version
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onDeleteHotel = /* GraphQL */ `
+  subscription OnDeleteHotel($owner: String) {
+    onDeleteHotel(owner: $owner) {
+      id
+      hotelID
+      locale
+      code
+      name
+      address
+      city
+      postalCode
+      province
+      country
+      phone
+      image
+      _version
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;

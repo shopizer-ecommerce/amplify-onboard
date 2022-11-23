@@ -103,6 +103,9 @@ const en_us_lang = {
     FinantialInformationNumber: "Financial Institution Number",
     FinantialTransitNumber: "Transit Number",
     FinantialAccountNumber: "Account Number",
+    HotelName: "Hotel Name",
+    HotelInfoTitle: 'Hotel information',
+    HotelInfoText: 'Select from the list the hotel that will be used in the payment application'
   },
 };
 

@@ -109,3 +109,78 @@ export const deleteUser = /* GraphQL */ `
     }
   }
 `;
+export const createHotel = /* GraphQL */ `
+  mutation CreateHotel(
+    $input: CreateHotelInput!
+    $condition: ModelHotelConditionInput
+  ) {
+    createHotel(input: $input, condition: $condition) {
+      id
+      hotelID
+      locale
+      code
+      name
+      address
+      city
+      postalCode
+      province
+      country
+      phone
+      image
+      _version
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateHotel = /* GraphQL */ `
+  mutation UpdateHotel(
+    $input: UpdateHotelInput!
+    $condition: ModelHotelConditionInput
+  ) {
+    updateHotel(input: $input, condition: $condition) {
+      id
+      hotelID
+      locale
+      code
+      name
+      address
+      city
+      postalCode
+      province
+      country
+      phone
+      image
+      _version
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteHotel = /* GraphQL */ `
+  mutation DeleteHotel(
+    $input: DeleteHotelInput!
+    $condition: ModelHotelConditionInput
+  ) {
+    deleteHotel(input: $input, condition: $condition) {
+      id
+      hotelID
+      locale
+      code
+      name
+      address
+      city
+      postalCode
+      province
+      country
+      phone
+      image
+      _version
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
