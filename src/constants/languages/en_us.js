@@ -4,7 +4,7 @@ const en_us_lang = {
   Loading: "Loading",
   Email: "Email",
   Password: "Password",
-  Code: "Code",
+  Code: "Confirmation Code",
   PasswordRules: {
     Chars: "Must have at least 8 chars",
     Lowercase: "Requires Lowercase",
@@ -49,7 +49,7 @@ const en_us_lang = {
     RedefinePasswordSuccess: "Password changed successfully!",
     RedefinePasswordButton: "Redefine Password",
     SignUpTitle: "Sign Up",
-    SignUpSuccess: "Check your Email",
+    SignUpSuccess: "Check your Email for your verification code",
     SignUpButton: "Sign Up",
     ConfirmRegistrationTitle: "Confirm Registration",
     ResendConfirmationCode: "Resend Confirmation Code",
@@ -92,7 +92,7 @@ const en_us_lang = {
     ChangeBanking: 'Update banking information',
     AttributesSuccess: 'Profile Updated successfully!',
     Provinces: {
-      "qc": "Qubec",
+      "qc": "Quebec",
       "on": "Ontario"
     },
     CountryList: {
@@ -105,7 +105,8 @@ const en_us_lang = {
     FinantialAccountNumber: "Account Number",
     HotelName: "Hotel Name",
     HotelInfoTitle: 'Hotel information',
-    HotelInfoText: 'Select from the list the hotel that will be used in the payment application'
+    HotelInfoText: 'Select from the list the hotel that will be used in the payment application',
+    ChangeHotel: 'Update hotel selection',
   },
 };
 

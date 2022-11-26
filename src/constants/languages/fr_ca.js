@@ -4,7 +4,7 @@ const fr_ca_lang = {
   Loading: "Chargement",
   Email: "Courriel",
   Password: "Mot de passe",
-  Code: "Code",
+  Code: "Code de confirmation",
   PasswordRules: {
     Chars: "Doit avoir 8 charactàres",
     Lowercase: "Doit contenir des caractères minuscules",
