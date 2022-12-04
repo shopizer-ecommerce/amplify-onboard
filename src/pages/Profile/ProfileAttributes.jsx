@@ -32,8 +32,8 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
 
   const hotels = [
     { label: 'Hôtel Palace Royal', value: 'jaro_palace_royal' },
-    { label: 'Hôtel Plaza Québec', value: 'jaro_palace_royal' },
-    { label: 'Hôtel Québec Inn – Aéroport de Québec', value: 'jaro_palace_royal' },
+    { label: 'Hôtel Plaza Québec', value: 'jaro_plaza_quebec' },
+    { label: 'Hôtel Québec Inn – Aéroport de Québec', value: 'jaro_hotel_quebec' },
     { label: 'Hôtel Must – Aéroport de Québec', value: 'jaro_must' },
     { label: 'Hôtel Lindbergh (Place Laurier)', value: 'jaro_lindberg' },
     { label: 'Auberge Québec', value: 'jaro_auberge_quebec' },

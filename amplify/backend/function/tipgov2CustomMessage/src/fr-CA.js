@@ -13,7 +13,7 @@ async function signUpMessage(event, generateEmailBody) {
 
 async function forgotPassword(event, generateEmailBody) {
 	event.response = {
-		emailSubject: `Tip&Go: Recover Password`,
+		emailSubject: `Tip&Go: Retrouvez votre mot de passe`,
 		emailMessage: generateEmailBody(`
       <p>Votre code de récupération de mot de passe est: ${event.request.codeParameter}</p>
       <br />
@@ -25,7 +25,7 @@ async function forgotPassword(event, generateEmailBody) {
 
 async function updateUserAttributeMessage(event, generateEmailBody) {
 	event.response = {
-		emailSubject: `Tip&Go: Profile Updated`,
+		emailSubject: `Tip&Go: Mise à jour du profil`,
 		emailMessage: generateEmailBody(
 			`<p>Votre profile a été mis à jour, veuillez utiliser ce code: ${event.request.codeParameter}</p>`
 		),
@@ -35,7 +35,7 @@ async function updateUserAttributeMessage(event, generateEmailBody) {
 
 async function verifyUserAttribute(event, generateEmailBody) {
 	event.response = {
-		emailSubject: `Tip&Go: Update Email`,
+		emailSubject: `Tip&Go: Mettre à jour votre courriel`,
 		emailMessage: generateEmailBody(`<p>Pour mettre à jour votre couriel utilisez ce code: ${event.request.codeParameter}</p>`),
 	};
 	return event;

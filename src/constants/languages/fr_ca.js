@@ -50,7 +50,7 @@ const fr_ca_lang = {
     BackToSignIn: "Authentification",
     RedefinePasswordTitle: "Changer votre mot de passe",
     RepeatPassword: "Répétez votre mot de passe",
-    RedefinePasswordSuccess: "Password changed successfully!",
+    RedefinePasswordSuccess: "Votre mot de passe a été changé avec succès!",
     RedefinePasswordButton: "Changer le mot de passe",
     SignUpTitle: "Crééer un compte",
     SignUpSuccess: "Vérifiez votre courriel, vous avez reçu un code permettant d'accéder au site",
