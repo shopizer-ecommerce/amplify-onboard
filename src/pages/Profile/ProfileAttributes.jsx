@@ -6,7 +6,7 @@ import Mudations from "../../api/mutations";
 import { Button, Form, Input, Select, Hotels, Phone, Picture, Agreement } from "../../components";
 
 
-const ProfileAttributes = ({ handleErrors, setAlert }) => {
+const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
   const { state } = useContext(AppContext);
   const { user } = state;
   const { loadUser, setLoading } = useOutletContext();
@@ -41,7 +41,6 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
 
 
   const handleAccount = event => {
-    //const result = event.target.value.replace(/\D/g, '');
 
     if (isNaN(event) || event < 0) {
     } else {
@@ -72,7 +71,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
     setCountry("CA");
     /** */
     if (user) {
-      console.log("User from DB " + JSON.stringify(user));
+      //console.log("User from DB " + JSON.stringify(user));
 
       setFirstName(user?.firstName || "");
       setLastName(user?.lastName || "");
@@ -97,6 +96,7 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
 
   const loading = () => {
     setAlert();
+    setSuccess();
     setLoading(true);
   };
 
@@ -127,9 +127,9 @@ const ProfileAttributes = ({ handleErrors, setAlert }) => {
       });
       //console.log('After update' + JSON.stringify(user));
       loadUser({ force: true, email: user.email });
-      setAlert({
-        type: "success",
-        text: LANGUAGES[user.locale].Profile.AttributesSuccess,
+      setSuccess({
+        title: LANGUAGES[user.locale].Profile.SaveProfileTitle,
+        text: LANGUAGES[user.locale].Profile.SaveProfileText
       });
     } catch (error) {
       console.log('Error ' + JSON.stringify(error));

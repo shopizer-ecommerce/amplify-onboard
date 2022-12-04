@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useContext, useState } from "react";
 import { LANGUAGES, ROUTES } from "../../constants";
-import { Alert, Title } from "../../components";
+import { Alert, Title, Success } from "../../components";
 import { AppContext } from "../../context";
 import ProfileEmail from "./ProfileEmail";
 import ProfileChangePassword from "./ProfileChangePassword";
@@ -12,6 +12,7 @@ export default function Profile() {
   const { state } = useContext(AppContext);
   const { user } = state;
   const [alert, setAlert] = useState();
+  const [success, setSuccess] = useState();
 
   const handleErrors = useCallback((message) => {
     let errorMessage = message;
@@ -44,8 +45,9 @@ export default function Profile() {
         back={ROUTES[user.locale].HOME}
       />
       {alert?.type && <Alert type={alert?.type} text={alert?.text} /> }
+      {success?.title && <Success title={success?.title} text={success?.text} /> }
       <div className="grid sm:grid-cols-1 gap-2">
-        <ProfileAttributes handleErrors={handleErrors} setAlert={setAlert} />
+        <ProfileAttributes handleErrors={handleErrors} setAlert={setAlert} setSuccess={setSuccess} />
       </div>
     </section>
   );

@@ -100,6 +100,10 @@
 		inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor);
 }
 
+.margin-bottom-10 {
+	margin-bottom:10px;
+}
+
 .PhoneInputCountryIconImg {
 	/* Fixes weird vertical space above the flag icon. */
 	/* https://gitlab.com/catamphetamine/react-phone-number-input/-/issues/7#note_348586559 */

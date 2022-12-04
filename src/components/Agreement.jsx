@@ -2,13 +2,22 @@ import { useState, useContext, useEffect } from "react";
 import { LANGUAGES } from "../constants";
 import { AppContext } from "../context";
 import Modal from 'react-modal';
+import axios from "axios";
+
+
 
 const Agreement = ({  value, handler  }) => {
   const { state } = useContext(AppContext);
+  const { user } = state;
   const [modalOpen, setModalOpen] = useState();
+  const [conditions, setConditions] = useState("");
   
   useEffect(() => {
     setModalOpen(false);
+    if (user) {
+      var termsUrl = 'https://tip-go.ca/terms/TermsConditions-' + user.locale + '.html';
+      axios.get(termsUrl).then((response) => setConditions(response.data)).catch((error) => console.log(error.message))
+    }
   }, []);
 
   function openModal() {
@@ -44,10 +53,10 @@ const Agreement = ({  value, handler  }) => {
       </fieldset>
 
     
-      <Modal isOpen={modalOpen} onRequestClose={closeModal}>
+      <Modal isOpen={modalOpen} ariaHideApp={false} onRequestClose={closeModal}>
+          <div dangerouslySetInnerHTML={{ __html: conditions }} />
           <button onClick={closeModal} className="bg-indigo-500 cursor-pointer hover:bg-amber-500 hover:shadow-md focus:bg-amber-500 focus:shadow-md focus:outline-none focus:ring-0 active:bg-amber-500 active:shadow-md inline-block px-2 py-2 text-white font-medium uppercase rounded shadow-md transition duration-150 ease-in-out w-full">{LANGUAGES[state.lang].Close}</button>
-          <div>{LANGUAGES[state.lang].Profile.TermsConditions}</div>
-       </Modal>
+      </Modal>
     
     </div>
 

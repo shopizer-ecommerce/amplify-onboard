@@ -107,6 +107,8 @@ const en_us_lang = {
     HotelInfoTitle: 'Hotel information',
     HotelInfoText: 'Select from the list the hotel that will be used in the payment application',
     ChangeHotel: 'Update hotel selection',
+    SaveProfileTitle: "Your profile has been updated with success.",
+    SaveProfileText: "We have received your profile informations. An email will be sent to you shortly once the informations will be processed by Tip&Go."
   },
 };
 

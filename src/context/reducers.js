@@ -11,7 +11,7 @@ function updateLang(state, payload) {
 }
 
 function updateUser(state, payload) {
-  console.log('Update user reducer '+ JSON.stringify(payload));
+  //console.log('Update user reducer '+ JSON.stringify(payload));
   const newState = { ...state, user: payload };
   saveState(newState);
   return newState;

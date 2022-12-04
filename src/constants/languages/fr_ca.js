@@ -110,6 +110,8 @@ const fr_ca_lang = {
     HotelInfoTitle: "Informations sur l'hôtel",
     HotelInfoText: "Sélectionnez depuis la liste le nom de l'hôtel qui sera utilisé par l'application de paiement",
     ChangeHotel: "Mise à jour de l'hôtel",
+    SaveProfileTitle: "Votre profil a été mis à jour avec succès.",
+    SaveProfileText: "Nous avons recu les informations de votre profile. Un courriel vous sera envoyé sous peu lorsque les informations seront traitées par Tip&Go."
   }
 };
 
