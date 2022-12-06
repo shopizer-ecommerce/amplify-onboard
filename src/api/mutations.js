@@ -10,13 +10,14 @@ const CreateUser = async (email, locale) => {
   return createUser;
 };
 
-const UpdateUser = async ({ id, email, locale, firstName, lastName, address, city, province, country, postalCode, phone, image, agreement, banking, transit, account, verified, hotel, shortId, ext }) => {
+const UpdateUser = async ({ id, internalId, email, locale, firstName, lastName, address, city, province, country, postalCode, phone, image, agreement, banking, transit, account, verified, hotel, shortId, ext }) => {
   const {
     data: { updateUser },
   } = await API.graphql(
     graphqlOperation(mutations.updateUser, {
       input: {
         id,
+        internalId,
         email,
         locale,
         firstName,

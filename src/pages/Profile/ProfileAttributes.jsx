@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { AppContext } from "../../context";
 import { LANGUAGES, PROVINCES, COUNTRY } from "../../constants";
+import { Auth } from 'aws-amplify';
 import Mudations from "../../api/mutations";
 import { Button, Form, Input, Select, Hotels, Phone, Picture, Agreement } from "../../components";
 
@@ -24,7 +25,7 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
   const [transit, setTransit] = useState("");
   const [account, setAccount] = useState("");
   const [image, setImage] = useState("");
-  //const [shortId, setShortId] = useState("");
+  const [shortId, setShortId] = useState("");
   const [ext, setExt] = useState(false);
   const [agreement, setAgreement] = useState(false);
   const [verified, setVerified] = useState(false);
@@ -67,6 +68,19 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
   /** Fill the form */
   useEffect(() => {
     /** DEFAULT VALUES */
+
+    Auth.currentUserInfo().then(
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      (_currentAuthenticatedUser) => {
+        setShortId(_currentAuthenticatedUser.id);
+        //console.log("Yes, user is logged in. " + JSON.stringify(_currentAuthenticatedUser));
+      },
+      (error) => {
+          console.log(error);
+      }
+    );
+
+
     setProvince("qc");
     setCountry("CA");
     /** */
@@ -89,6 +103,7 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
       setHotel(user?.hotel || "");
       setExt(user?.ext || false);
       setVerified(user?.verified || false);
+      setShortId(user?.shortId || "");
     }
   }, [user]);
 
@@ -106,6 +121,7 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
       //console.log('Before updating current user ' + JSON.stringify(user));
       await Mudations.UpdateUser({
         id: user.id,
+        shortId: shortId,
         email: user.email,
         locale: user.locale,
         firstName: firstName,
@@ -125,8 +141,8 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
         verified: verified,
         ext: ext
       });
-      //console.log('After update' + JSON.stringify(user));
       loadUser({ force: true, email: user.email });
+      //console.log('After update' + JSON.stringify(user));
       setSuccess({
         title: LANGUAGES[user.locale].Profile.SaveProfileTitle,
         text: LANGUAGES[user.locale].Profile.SaveProfileText

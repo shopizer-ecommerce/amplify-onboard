@@ -22,7 +22,7 @@
       "function": {
         "tipgov2CustomMessage": {
           "deploymentBucketName": "amplify-tipgov2-prodca-134718-deployment",
-          "s3Key": "amplify-builds/tipgov2CustomMessage-4d4d5661386865666971-build.zip"
+          "s3Key": "amplify-builds/tipgov2CustomMessage-62796561664338725364-build.zip"
         }
       },
       "hosting": {
