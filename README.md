@@ -1,3 +1,7 @@
+# AWS profile
+
+export AWS_PROFILE=tipngo
+
 # Onboarding App
 
 

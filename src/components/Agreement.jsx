@@ -15,7 +15,8 @@ const Agreement = ({  value, handler  }) => {
   useEffect(() => {
     setModalOpen(false);
     if (user) {
-      var termsUrl = 'https://tip-go.ca/terms/TermsConditions-' + user.locale + '.html';
+      //var termsUrl = 'https://tip-go.ca/terms/TermsConditions-' + user.locale + '.html';
+      var termsUrl = 'https://app.tip-go.ca/terms/TermsConditions-' + user.locale + '.html';
       axios.get(termsUrl).then((response) => setConditions(response.data)).catch((error) => console.log(error.message))
     }
   }, []);
