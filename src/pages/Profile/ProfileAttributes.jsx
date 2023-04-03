@@ -4,8 +4,8 @@ import { AppContext } from "../../context";
 import { LANGUAGES, PROVINCES, COUNTRY } from "../../constants";
 import { Auth } from 'aws-amplify';
 import Mudations from "../../api/mutations";
-import { Button, Form, Input, Select, Hotels, Phone, Picture, Agreement } from "../../components";
-
+import { Button, Input, Select, Hotels, Phone, Picture, Agreement } from "../../components";
+import data from "../data/hotels.json";
 
 const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
   const { state } = useContext(AppContext);
@@ -30,9 +30,11 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
   const [agreement, setAgreement] = useState(false);
   const [verified, setVerified] = useState(false);
 
-
+  const hotels = data;
+  /**
   const hotels = [
     { label: 'Auberge Québec', value: 'jaro_auberge_quebec' },
+    { label: 'Hôtel Clarion Pointe', value: 'clarion_pointe' },
     { label: 'Hôtel Palace Royal', value: 'jaro_palace_royal' },
     { label: 'Hôtel Plaza Québec', value: 'jaro_plaza_quebec' },
     { label: 'Hôtel Québec Inn – Aéroport de Québec', value: 'jaro_hotel_quebec' },
@@ -40,6 +42,7 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
     { label: 'Hôtel Lindbergh (Place Laurier)', value: 'jaro_lindberg' },
     { label: 'Les Suites Kaishi', value: 'lessuiteskaishi' },
   ];
+  **/
 
 
   const handleAccount = event => {
