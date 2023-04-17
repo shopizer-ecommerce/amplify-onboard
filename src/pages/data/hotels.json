@@ -1,10 +1,12 @@
 [
     { "label": "Auberge Québec", "value": "jaro_auberge_quebec" },
+    { "label": "Confort Inn Rouyn-Noranda", "value": "confort_inn_routynoranda" },
     { "label": "Hôtel Clarion Pointe", "value": "clarion_pointe" },
     { "label": "Hôtel Palace Royal", "value": "jaro_palace_royal" },
     { "label": "Hôtel Plaza Québec", "value": "jaro_plaza_quebec" },
     { "label": "Hôtel Québec Inn – Aéroport de Québec", "value": "jaro_hotel_quebec" },
     { "label": "Hôtel Must – Aéroport de Québec", "value": "jaro_must" },
     { "label": "Hôtel Lindbergh (Place Laurier)", "value": "jaro_lindberg" },
-    { "label": "Les Suites Kaishi", "value": "lessuiteskaishi" }
+    { "label": "Les Suites Kaishi", "value": "lessuiteskaishi" },
+    { "label": "Quality Inn & Suites Victoriaville", "value": "quality_inn_suites_victoriaville" }
 ]
