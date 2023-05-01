@@ -44,3 +44,5 @@ export AWS_PROFILE=tipngo
 # query 
 
 hotel Equals lessuiteskaishi
+
+https://b5sj6dld72.execute-api.ca-central-1.amazonaws.com/prod/onboardings?hotel=clarion_pointe
