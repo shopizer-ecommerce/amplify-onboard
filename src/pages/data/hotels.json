@@ -10,5 +10,6 @@
     { "label": "Hôtel Lindbergh (Place Laurier)", "value": "jaro_lindberg" },
     { "label": "Les Suites Kaishi", "value": "lessuiteskaishi" },
     { "label": "Quality Inn & Suites Victoriaville", "value": "quality_inn_suites_victoriaville" },
-    { "label": "re Stays", "value": "restays" }
+    { "label": "re Stays", "value": "restays" },
+    { "label": "Travelodge By Wyndham Montreal Centre", "value": "travelodge_montreal_centre" }
 ]
