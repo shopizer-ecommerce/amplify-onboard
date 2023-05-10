@@ -1,5 +1,6 @@
 [
     { "label": "Auberge Québec", "value": "jaro_auberge_quebec" },
+    { "label": "Best Western Ville-Marie Montreal Hotel & Suites ", "value": "best_western_ville_marie_montreal" },
     { "label": "Confort Inn Rouyn-Noranda", "value": "confort_inn_rouynnoranda" },
     { "label": "Estrimont Suites & Spa", "value": "estrimont" },
     { "label": "Hôtel Clarion Pointe", "value": "clarion_pointe" },
@@ -12,4 +13,6 @@
     { "label": "Quality Inn & Suites Victoriaville", "value": "quality_inn_suites_victoriaville" },
     { "label": "re Stays", "value": "restays" },
     { "label": "Travelodge By Wyndham Montreal Centre", "value": "travelodge_montreal_centre" }
+
+    
 ]
