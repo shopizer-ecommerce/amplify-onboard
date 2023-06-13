@@ -9,6 +9,7 @@ type User @model
   name: String
   internalId: String
   birthdate: AWSDate
+  gender: String
   firstName: String
   lastName: String
   address: String

@@ -13,6 +13,7 @@ export const createUser = /* GraphQL */ `
       name
       internalId
       birthdate
+      gender
       firstName
       lastName
       address
@@ -50,6 +51,7 @@ export const updateUser = /* GraphQL */ `
       name
       internalId
       birthdate
+      gender
       firstName
       lastName
       address
@@ -87,6 +89,7 @@ export const deleteUser = /* GraphQL */ `
       name
       internalId
       birthdate
+      gender
       firstName
       lastName
       address

@@ -10,6 +10,7 @@ export const getUser = /* GraphQL */ `
       name
       internalId
       birthdate
+      gender
       firstName
       lastName
       address
@@ -57,6 +58,7 @@ export const listUsers = /* GraphQL */ `
         name
         internalId
         birthdate
+        gender
         firstName
         lastName
         address
@@ -165,6 +167,7 @@ export const userByEmail = /* GraphQL */ `
         name
         internalId
         birthdate
+        gender
         firstName
         lastName
         address

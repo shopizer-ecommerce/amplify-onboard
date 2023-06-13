@@ -12,6 +12,7 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
   const { user } = state;
   const { loadUser, setLoading } = useOutletContext();
 
+  const [gender, setGender] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
@@ -31,18 +32,6 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
   const [verified, setVerified] = useState(false);
 
   const hotels = data;
-  /**
-  const hotels = [
-    { label: 'Auberge Québec', value: 'jaro_auberge_quebec' },
-    { label: 'Hôtel Clarion Pointe', value: 'clarion_pointe' },
-    { label: 'Hôtel Palace Royal', value: 'jaro_palace_royal' },
-    { label: 'Hôtel Plaza Québec', value: 'jaro_plaza_quebec' },
-    { label: 'Hôtel Québec Inn – Aéroport de Québec', value: 'jaro_hotel_quebec' },
-    { label: 'Hôtel Must – Aéroport de Québec', value: 'jaro_must' },
-    { label: 'Hôtel Lindbergh (Place Laurier)', value: 'jaro_lindberg' },
-    { label: 'Les Suites Kaishi', value: 'lessuiteskaishi' },
-  ];
-  **/
 
 
   const handleAccount = event => {
@@ -89,8 +78,9 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
     setCountry("CA");
     /** */
     if (user) {
-      //console.log("User from DB " + JSON.stringify(user));
+      console.log("User from DB " + JSON.stringify(user));
 
+      setGender(user?.gender || "");
       setFirstName(user?.firstName || "");
       setLastName(user?.lastName || "");
       setAddress(user?.address || "");
@@ -119,15 +109,21 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
     setLoading(true);
   };
 
+  const onOptionChange = e => {
+    console.log('Change Gender ' + e.target.value);
+    setGender(e.target.value);
+  }
+
   const handleAttributes = async () => {
     loading();
     try {
-      //console.log('Before updating current user ' + JSON.stringify(user));
+      console.log('Before updating current user ' + JSON.stringify(user));
       await Mudations.UpdateUser({
         id: user.id,
         shortId: shortId,
         email: user.email,
         locale: user.locale,
+        gender: gender,
         firstName: firstName,
         lastName: lastName,
         address: address,
@@ -146,7 +142,7 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
         ext: ext
       });
       loadUser({ force: true, email: user.email });
-      //console.log('After update' + JSON.stringify(user));
+      console.log('After update' + JSON.stringify(user));
       setSuccess({
         title: LANGUAGES[user.locale].Profile.SaveProfileTitle,
         text: LANGUAGES[user.locale].Profile.SaveProfileText
@@ -187,6 +183,40 @@ const ProfileAttributes = ({ handleErrors, setAlert, setSuccess }) => {
 
                 {/** Profile Infos */}
                 <div className="grid grid-cols-6 gap-6">
+
+                <div className="col-span-6 sm:col-span-6">
+                    <label htmlFor="gender" className="block text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.Gender}</label>
+                    <label htmlFor="Woman" className="text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.GenderWoman}</label>&nbsp;
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="woman"
+                      id="woman"
+                      checked={gender === "woman"}
+                      onChange={onOptionChange}
+                    />
+                    &nbsp;
+                    <label htmlFor="Men" className="text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.GenderMan}</label>&nbsp;
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="man"
+                      id="man"
+                      checked={gender === "man"}
+                      onChange={onOptionChange}
+                    />
+                    &nbsp;
+                    <label htmlFor="Other" className="text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.GenderOther}</label>&nbsp;
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="other"
+                      id="other"
+                      checked={gender === "other"}
+                      onChange={onOptionChange}
+                    />
+                </div>
+                
 
                   <div className="col-span-6 sm:col-span-3">
                     <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">{LANGUAGES[user.locale].Profile.FirstName}</label>

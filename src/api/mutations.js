@@ -10,7 +10,7 @@ const CreateUser = async (email, locale) => {
   return createUser;
 };
 
-const UpdateUser = async ({ id, internalId, email, locale, firstName, lastName, address, city, province, country, postalCode, phone, image, agreement, banking, transit, account, verified, hotel, shortId, ext }) => {
+const UpdateUser = async ({ id, internalId, email, locale, gender, firstName, lastName, address, city, province, country, postalCode, phone, image, agreement, banking, transit, account, verified, hotel, shortId, ext }) => {
   const {
     data: { updateUser },
   } = await API.graphql(
@@ -20,6 +20,7 @@ const UpdateUser = async ({ id, internalId, email, locale, firstName, lastName, 
         internalId,
         email,
         locale,
+        gender,
         firstName,
         lastName,
         address,
