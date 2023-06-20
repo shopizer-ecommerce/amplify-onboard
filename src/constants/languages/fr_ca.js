@@ -102,7 +102,8 @@ const fr_ca_lang = {
     AttributesSuccess: 'Le profil a été mis à jour avec succès!',
     Provinces: {
       "qc": "Québec",
-      "on": "Ontario"
+      "on": "Ontario",
+      "bc": "Colombie Britanique"
     },
     CountryList: {
       "CA": "Canada"

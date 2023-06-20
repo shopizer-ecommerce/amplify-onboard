@@ -17,7 +17,8 @@ export const LANGUAGES = {
 
 export const PROVINCES = {
   "qc":  "qc",
-  "on":  "on"
+  "on":  "on",
+  "bc":  "bc"
 };
 
 export const COUNTRY = {
