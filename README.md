@@ -46,3 +46,10 @@ export AWS_PROFILE=tipngo
 hotel Equals lessuiteskaishi
 
 https://b5sj6dld72.execute-api.ca-central-1.amazonaws.com/prod/onboardings?hotel=travellodge_montreal_centre
+
+
+# env
+
+Amplify console
+
+Get backend env amplify pull --appId <app id> --envName test

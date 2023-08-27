@@ -101,9 +101,10 @@ const fr_ca_lang = {
     ChangeBanking: 'Mettre à jour les informations bancaires',
     AttributesSuccess: 'Le profil a été mis à jour avec succès!',
     Provinces: {
-      "qc": "Québec",
+      "ab": "Alberta",
+      "bc": "British Columbia",
       "on": "Ontario",
-      "bc": "Colombie Britanique"
+      "qc": "Québec"
     },
     CountryList: {
       "CA": "Canada"
